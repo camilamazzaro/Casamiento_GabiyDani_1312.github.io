@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!--Íconos-->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+</head>
+<body>
+    
+    <!-- Video presentación -->
+    <div class="contenedor-video">
+        <video 
+        class="video-presentacion"
+        src="./img/video_presentación.mp4" 
+        type="video/mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        >
+        <!--Playsinline: evita que el video se abra en pantalla completa en dispositivos móviles.-->
+            Tu navegador no es compatible
+        </video>
+
+        <div class="texto-video">
+            <h5>Nuestro Casamiento</h5>
+            <h2>Gabi y Dani</h2>
+        </div>
+
+        <a href="#cuenta-regresiva" class="flecha-abajo">
+            <i class="fa-regular fa-chevron-down"></i>
+        </a>
+
+    </div>
+    
+
+    <!--Cuenta regresiva y fecha del evento-->
+    <div class="fecha" id="fecha">
+        <div>
+            Sábado
+        </div>
+        <div class="fecha-dia">
+            13
+        </div>
+        <div>
+            Diciembre
+        </div>
+    </div>
+
+    <div class="cuenta-regresiva" id="cuenta-regresiva">
+        <div class="grupo">
+            <p class="grande" id="dias">00</p>
+            <p class="chico">días</p>
+        </div>
+
+        <div class="grupo">
+            <p class="grande" id="horas">00</p>
+            <p class="chico">horas</p>
+        </div>
+
+        <div class="grupo">
+            <p class="grande" id="minutos">00</p>
+            <p class="chico">minutos</p>
+        </div>
+
+        <div class="grupo">
+            <p class="grande" id="segundos">00</p>
+            <p class="chico">segundos</p>
+        </div>
+    </div>
+
+    <!-- Información del evento -->
+    <div class="contenedor-info-evento">
+        <div class="flor"></div>
+
+        <div class="info-evento">
+            <h3>Información de Evento</h3>
+            <p>
+                <strong>Fecha</strong> 
+                <br>
+                13 de diciembre, 2025
+            </p>
+            <p>
+                <strong>Hora</strong> 
+                <br>
+                19:00hs.
+            </p>
+            <p>
+                <strong>Lugar</strong> 
+                <br>
+                La Araucaria Eventos - Ruta 30 km 476
+            </p>
+
+            <a href="https://www.google.com/maps/dir//Ruta+30+km+476,+B6620+Chivilcoy,+Provincia+de+Buenos+Aires/@-34.8486552,-60.1428067,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95beb18d196011e1:0x8139a3cbc002a413!2m2!1d-60.0604056!2d-34.848683?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">CÓMO LLEGAR</a>
+        </div>
+        
+    </div>
+    
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
