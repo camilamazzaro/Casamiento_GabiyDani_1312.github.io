@@ -36,3 +36,33 @@ let intervalo = setInterval(() => {
     }
 
 }, 1000); // Se actualiza la cuenta regresiva cada un segundo
+
+
+/* ---- ANIMACIÓN REGALO ----- */ 
+
+  const regalo = document.getElementById('regalo');
+  const tapa = document.getElementById('tapa');
+  const modal = document.getElementById('modal');
+  const cerrar = document.getElementById('cerrar');
+
+  regalo.addEventListener('click', () => {
+    tapa.classList.add('abierta');
+    
+    // Espera a que se abra la tapa antes de mostrar el modal
+    setTimeout(() => {
+      modal.style.display = 'flex';
+    }, 600);
+  });
+
+  cerrar.addEventListener('click', () => {
+    modal.style.display = 'none';
+    tapa.classList.remove('abierta'); // vuelve a cerrar
+  });
+
+  // Cerrar si se hace clic fuera del contenido
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      tapa.classList.remove('abierta');
+    }
+  });
