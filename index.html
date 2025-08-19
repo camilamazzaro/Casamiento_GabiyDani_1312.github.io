@@ -1,4 +1,4 @@
--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
 
         <div class="texto-video">
             <h5>Nuestro Casamiento</h5>
-            <h3>Gabi y Dani</h3>
+            <div class="titulo-video"></div>
         </div>
 
         <a href="#cuenta-regresiva" class="flecha-abajo">
@@ -44,7 +44,7 @@
             Sábado
         </div>
         <div class="fecha-dia">
-            13
+
         </div>
         <div>
             Diciembre
@@ -74,7 +74,7 @@
     </div>
 
     <!-- Información del evento -->
-    <div class="contenedor-info-evento">
+    <div class="contenedor-info-evento" id="informacion">
         <div class="flor"></div>
 
         <div class="info-evento">
@@ -95,13 +95,120 @@
                 La Araucaria Eventos - Ruta 30 km 476
             </p>
 
-            <a href="https://www.google.com/maps/dir//Ruta+30+km+476,+B6620+Chivilcoy,+Provincia+de+Buenos+Aires/@-34.8486552,-60.1428067,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95beb18d196011e1:0x8139a3cbc002a413!2m2!1d-60.0604056!2d-34.848683?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">CÓMO LLEGAR</a>
+            <div class="botones">
+                <a href="https://www.google.com/maps/dir//Ruta+30+km+476,+B6620+Chivilcoy,+Provincia+de+Buenos+Aires/@-34.8486552,-60.1428067,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95beb18d196011e1:0x8139a3cbc002a413!2m2!1d-60.0604056!2d-34.848683?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                <div class="icono-ubicacion"></div>
+                CÓMO LLEGAR</a>
+
+                <a href="">
+                    <div class="icono-calendario"></div>
+                    AGENDAR
+                </a>
+            </div>
+            
         </div>
         
     </div>
-    
+
+    <!-- Foto individual -->
+    <!-- <section class="foto-individual">
+        <div class="texto-individual-sup"></div>
+        <div class="foto"></div>
+    </section> -->
+
+
+    <!-- DRESSCODE -->
+    <section class="seccion-dresscode" id="dresscode">
+        
+        <div class="contenedor-titulo-dresscode">
+            <div class="linea-curva"></div>
+            <div class="titulo-dresscode"></div>
+            <div class="linea-curva-der"></div>
+        </div>
+        
+        
+        <img src="./img/dresscode_animacion.gif" class="gif-dresscode" alt="Dresscode">
+
+        <h4>Formal - Elegante</h4>
+        
+    </section>
+
+    <!-- REGALOS -->
+    <section class="seccion-regalo" id="regalos">
+        <div class="regalo" id="regalo">  
+            <div class="flores-chicas-sup"></div>
+
+            <h2>Regalos</h2>
+            <p>Nuestro mejor regalo es que puedas acompañarnos, pero si lo deseás, podés colaborar con nuestra luna de miel.</p>
+            
+            <div class="regalo-superior" id="tapa"></div>
+            <div class="regalo-inferior"></div>
+
+            <div class="flores-chicas-inf"></div>
+            
+            <div class="clic-regalo">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="contenido-modal">
+            <div class="flor"></div>
+
+            <div class="titulo-datos-bancarios"></div>
+            <ul>
+                <li><strong>Nombre del Titular</strong><br> Nombre Apellido</li>
+                <li><strong>CBU</strong><br> 12345623561</li>
+                <li><strong>Alias</strong><br>alias.cuenta.hola</li>
+                <li><strong>DNI</strong><br> 32200552</li>
+                <li>Banco Galicia </li>
+            </ul>
+
+            <span class="cerrar btn" id="cerrar">Cerrar</span>
+        </div>
+    </div>
+
+    <!-- La Araucaria - Ubicación y fotos -->
+    <section class="seccion-ubicacion" id="ubicacion">
+
+        <div class="titulo-ubicacion"></div>
+        <p>Te esperamos para compartir nuestro gran día en "La Araucaria", Ruta 30 km 476, Chivilcoy</p>
+
+        <div class="contenedor-ubicacion">
+            <div class="contenedor-mapa">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.069879740533!2d-60.06277098301647!3d-34.84854565852033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95beb18d196011e1%3A0x8139a3cbc002a413!2sLa%20Araucaria!5e0!3m2!1ses!2sar!4v1755529403891!5m2!1ses!2sar" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <div class="overlay">
+                    <a href="https://www.google.com/maps/dir//Ruta+30+km+476,+B6620+Chivilcoy,+Provincia+de+Buenos+Aires" target="_blank" class="btn-como-llegar btn">
+                        Cómo Llegar
+                    </a>
+                </div>
+            </div>
+            
+
+            <video 
+            class="video-ubicacion"
+            src="./img/video_araucaria.mp4" 
+            type="video/mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            >
+            <!--Playsinline: evita que el video se abra en pantalla completa en dispositivos móviles.-->
+                Tu navegador no es compatible
+            </video>
+        </div>  
+
+        <div class="flores-fondo-ubicacion"></div>
+    </section>
+
     <!-- Galería de fotos -->
     <section class="seccion-galeria">
+        <h2>Nuestros Momentos</h2>
 
         <div class="grid-imagenes">
             <div class="imagen-hover img1">
@@ -126,49 +233,130 @@
 
     </section>
 
+    <!-- Sugerencias de alojamiento -->
+    <section class="seccion-alojamiento" id="alojamiento">
+        <h2>Sugerencias de</h2>
+        <div></div>
+        <p>Si venís de otra ciudad, te recomendamos estos hoteles:</p>
 
-    <!-- DRESSCODE -->
-    <section class="seccion-dresscode">
-        <h2>Código de Vestimenta</h2>
-        
-        <img src="./img/dresscode_animacion.gif" class="gif-dresscode" alt="Dresscode">
-
-        <p>Elegante</p>
-        
+        <button class="btn" id="btn-alojamiento">Ver Opciones</button>
     </section>
 
-    <!-- REGALOS -->
-    <div class="regalo" id="regalo">
-        <hr>
-
-        <h2>Regalos</h2>
-        <p>Nuestro mejor regalo es que puedas acompañarnos, pero si lo deseás, podés colaborar con nuestra luna de miel.</p>
-        <div class="regalo-superior" id="tapa"></div>
-        <div class="regalo-inferior"></div>
-    </div>
-
-    <!-- MODAL -->
-    <div class="modal" id="modal">
+    <!-- MODAL ALOJAMIENTO -->
+    <div class="modal" id="modalAlojamiento">
         <div class="contenido-modal">
-            <span class="cerrar" id="cerrar">&times;</span>
-            <h2>¡Gracias por tu regalo!</h2>
-            <p>Tu presencia es el mejor regalo de todos. 💖</p>
+            <div class="flor"></div>
+
+            <div class="titulo-alojamiento"></div>
+            <ul>
+                <li>
+                    <h4>Hotel Tomaso</h4>
+                    <a href="https://maps.app.goo.gl/gfHzR3CFMWiacmJT7" target="_blank">Ver Más</a>
+                </li>
+                <li>
+                    <h4>Hotel Ejemplo 2</h4>
+                    <a href="https://maps.app.goo.gl/gfHzR3CFMWiacmJT7" target="_blank">Ver Más</a>
+                </li>
+                <li>
+                    <h4>Hotel Ejemplo 3</h4>
+                    <a href="https://maps.app.goo.gl/gfHzR3CFMWiacmJT7" target="_blank">Ver Más</a>
+                </li>
+            </ul>
+
+            <span class="cerrar btn" id="cerrarAlojamiento">Cerrar</span>
         </div>
     </div>
 
     <!-- Spotify -->
-    <section class="playlist">
-        <h3>¡Armemos juntos la playlist de la boda!</h3>
+    <section class="playlist sombra">
+        <div class="flor-izquierda"></div>
+
+        <div class="titulo-playlist"></div>
         <p>Agregá tus canciones favoritas para que suenen en nuestro gran día.</p>
 
         <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6RJr42OWNg4Kuya8Mol1mg?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        <div class="flor-derecha"></div>
+    </section>
+
+    <!-- Redes Sociales -->
+    <section class="seccion-instagram">
+
+        <div class="contenedor-instagram">
+            <div class="icono-instagram"></div>
+            <div class="titulo-instagram"></div>
+
+            <span>@casamiento_gabiydani</span>
+            <p>Etiquetanos en Instagram en tus fotos y videos.</p>
+
+            <div class="foto-instagram"></div>
+            <a href="" class="btn">Ver Perfil</a>
+        </div>
+
     </section>
 
     <!-- Confirmar asistencia -->
-    <section class="confirmar-asistencia">
-        <div class="icono-invitacion"></div>
-        <a href="">Confirmar Asistencia</a>
+    <section class="confirmar-asistencia" id="asistencia">
+        
+        <div class="contenedor-asistencia sombra">
+            <div class="flores-chicas-sup"></div>
+
+            <div class="icono-invitacion"></div>
+            <p>Por favor, confirmanos si podés acompañarnos antes del 10/08/2026</p>
+            <a href="">Confirmar Asistencia</a>
+
+            <div class="flores-chicas-inf"></div>
+        </div>
+
     </section>
+
+
+    <!-- BOTÓN WHATSAPP -->
+    <div class="whatsapp-container">
+        <button class="btn-wsp" onclick="toggleOpciones()">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+
+        <!-- Opciones ocultas -->
+        <div class="opciones-wsp" id="opcionesWsp">
+            <a href="https://wa.me/5491123456789" target="_blank" class="btn-gabi">
+                <i class="fa-brands fa-whatsapp"></i>
+                Gabi
+            </a>
+            <a href="https://wa.me/5491165432109" target="_blank" class="btn-dani">
+                <i class="fa-brands fa-whatsapp"></i>
+                Dani
+            </a>
+        </div>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="musica" loop autoplay>
+        <source src="audio.mp3" type="audio/mp3">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <!-- BOTÓN MÚSICA -->
+    <button class="btn-musica" onclick="toggleMusica()">
+        <div class="icono-musica"></div>
+    </button>
+
+    <!-- FOOTER -->
+
+    <footer class="sombra">
+        <div class="gabydani"></div>
+        <div class="contenedor-footer">
+            <ul>
+                <li><a href="#fecha">Fecha</a></li>
+                <li><a href="#informacion">Información del evento</a></li>
+                <li><a href="#dresscode">Dresscode</a></li>
+                <li><a href="#regalos">Regalos</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#alojamiento">Alojamiento</a></li>
+                <li><a href="#asistencia">Confirmar Asistencia</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <script src="./js/main.js"></script>
 </body>

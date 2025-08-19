@@ -30,6 +30,24 @@
     text-align: center;
 }
 
+body{
+    position: relative;
+    background: #fdfcf7;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('../img/textura-papel.jpg'); 
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 0.5;
+    pointer-events: none; 
+    z-index: -1; 
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -52,6 +70,51 @@ h2{
     margin-top: 1em;
 }
 
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #626365;
+    font-size: 18px;
+}
+
+.btn{
+    text-decoration: none;
+    color: var(--COLOR_CREMA_CLARO);
+    background-color: var(--COLOR_GRIS_OSCURO);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 23px;
+    font-weight: 600;
+    transition: all .8s ease;
+    cursor: pointer !important;
+    border: none;
+}
+
+.btn:hover{
+    background-color: var(--COLOR_CREMA_CLARO);
+    color: var(--COLOR_GRIS_OSCURO);
+}
+
+.sombra{
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.icono-ubicacion{
+    background: url('../img/icono-ubicacion.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+.icono-calendario{
+    background: url('../img/icono-calendario.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
 /* - VIDEO PRESENTACIÓN - */
 
 .contenedor-video{
@@ -66,6 +129,18 @@ h2{
     display: block;
     object-fit: cover;
     margin-bottom: 1em;
+    filter: grayscale(100%); /*Hago el video en BYN*/
+}
+
+.contenedor-video::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0) 80%);
+    pointer-events: none; /* para que no bloquee clics en el video */
 }
 
 .contenedor-video .texto-video{
@@ -76,6 +151,7 @@ h2{
     text-align: center;
     color: white;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    z-index: 2;
 }
 
 .texto-video h5{
@@ -84,23 +160,32 @@ h2{
     margin-bottom: 0.2em;
 }
 
-.texto-video h3{
+/* .texto-video h3{
     font-size: 60px;
     font-family: 'Great Vibes', cursive;
     font-weight: 400;
+} */
+
+.texto-video .titulo-video{
+    background: url('../img/gabi-y-dani.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 200px;
 }
 
 .contenedor-video .flecha-abajo{
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2.5rem;
+    font-size: 3em;
     color: var(--COLOR_VERDE);
     text-decoration: none;
     animation: saltar 1.5s infinite;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+    z-index: 2;
 }
 
 /*animación de la flecha*/
@@ -125,12 +210,12 @@ h2{
 }
 
 .fecha .fecha-dia{
-    font-size: 45px;
-    font-family: "Great Vibes", cursive;
-    border-left: .05em solid var(--COLOR_GRIS_OSCURO);
-    border-right: .05em solid var(--COLOR_GRIS_OSCURO);
+    background: url('../img/fecha-dia.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70px;
+    height: 60px;
     padding: 0 20px;
-    color: var(--COLOR_VERDE);
 }
 
 .cuenta-regresiva{
@@ -159,12 +244,12 @@ h2{
     position: relative;
     padding: 20px;
     max-width: 500px;
-    border: 1px solid var(--COLOR_GRIS_OSCURO);
-    border-radius: 12px;
     margin: 6em auto;
+    background: var(--COLOR_CREMA_CLARO);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-.contenedor-info-evento .flor{
+.flor{
     position: absolute;
     background: url('../img/flores_blancas4.png');
     background-repeat: no-repeat;
@@ -194,6 +279,14 @@ h2{
     margin-bottom: .5em;
 }
 
+.info-evento .texto-informacion-evento{
+    background: url('../img/informacion-evento.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 100px;
+}
+
 .info-evento p{
     font-size: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -205,16 +298,29 @@ h2{
     margin-top: 1em;
 }
 
+
+.info-evento .botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
 .info-evento a{
     text-decoration: none;
     color: var(--COLOR_CREMA_CLARO);
     background-color: var(--COLOR_GRIS_OSCURO);
     padding: 8px 15px;
     border-radius: 8px;
-    font-size: 23px;
+    font-size: 18px;
     font-weight: 600;
     margin-top: 1em;
     transition: all .8s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .info-evento a:hover{
@@ -222,20 +328,381 @@ h2{
     color: var(--COLOR_GRIS_OSCURO);
 }
 
+/* -- FOTO INDIVIDUAL -- */
+
+.foto-individual{
+    position: relative;
+    width: 100%;
+    margin-bottom: 5em;
+    display: flex;
+    justify-content: center;
+}
+
+.foto-individual .foto{
+    background: url('../img/individual1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 500px;
+    height: 600px;
+    filter: grayscale(100%);
+}
+
+.foto-individual .texto-individual-sup{
+    position: absolute;
+    top: 10%;
+    left: 58%;
+    z-index: 2;
+    background: url('../img/nuestro-casamiento.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 270px;
+    height: 130px;
+}
+
+
+/* -- DRESSCODE -- */
+
+.seccion-dresscode{
+    margin-bottom: 6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion-dresscode p{
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    color: var(--COLOR_GRIS_OSCURO);
+}
+
+.gif-dresscode{
+    width: 350px;
+    height: 350px;
+}
+
+.seccion-dresscode .titulo-dresscode{
+    background: url('../img/dresscode.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 90px;
+}
+
+.contenedor-titulo-dresscode{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.contenedor-titulo-dresscode .linea-curva{
+    background: url('../img/linea-curva.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 20px;
+}
+
+.contenedor-titulo-dresscode .linea-curva-der{
+    background: url('../img/linea-curva.png');
+    transform: rotate(180deg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 20px;
+}
+
+.seccion-dresscode h4{
+    font-family: "Cormorant Garamond", serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: var(--COLOR_GRIS_OSCURO);
+}
+
+/* -- REGALO -- */
+
+.seccion-regalo{
+    width: 100%;
+    height: 550px;
+    /* background: url('../img/fondo-regalo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%); */
+    align-content: center;
+}
+
+.regalo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 0 auto;
+    cursor: pointer;
+    background: var(--COLOR_CREMA_CLARO);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 500px;
+}
+
+.regalo p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 400px;
+    margin-bottom: 6em;
+    margin-top: 1em;
+    font-size: 18px;
+}
+
+.regalo h2{
+    margin-top: 0;
+}
+
+.regalo .regalo-superior{
+    width: 300px;
+    height: 95px;
+    background: url('/img/regalo-superior.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+    position: absolute;
+    margin-bottom: -85px;
+    transition: all .3s ease;
+}
+
+.regalo .regalo-inferior{
+    width: 210px;
+    height: 118px;
+    background: url('/img/regalo-inferior.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.regalo .clic-regalo{
+    background: url('../img/clic-regalo.png');
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    left: 68%;
+    top: 50%;
+    animation: sacudirSuave 3s infinite ease-in-out;
+}
+
+.flores-chicas-sup{
+    position: absolute;
+    z-index: -1;
+    background: url('../img/flores_blancas3.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 400px;
+    height: 300px;
+    top: -120px;
+    right: 20%;
+    transform: translateX(-50%);
+    opacity: 99;
+}
+
+.flores-chicas-inf{
+    position: absolute;
+    z-index: -1;
+    background: url('../img/flores_blancas3.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 400px;
+    height: 300px;
+    top: 280px;
+    left: 45%;
+    transform: translateX(-50%), rotate(187deg);
+    opacity: 99;
+}
+
+.abierta {
+    transform: translateY(-50px) rotate(20deg); 
+    transform-origin: center bottom;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal .flor{
+    top: -15px;
+}
+
+.contenido-modal {
+    background-color: #fff;
+    padding: 30px;
+    padding-top: 2em;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+    height: 550px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido-modal .titulo-datos-bancarios{
+    background: url('../img/datos-bancarios.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 350px;
+    height: 100px;
+    margin-top: 2em;
+}
+
+.contenido-modal ul{
+    list-style: none;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.contenido-modal ul li{
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--COLOR_GRIS_OSCURO);
+    margin-bottom: 1em;
+}
+
+.contenido-modal ul li strong{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+/* -- UBICACIÓN -- */
+
+.seccion-ubicacion{
+    height: 650px;
+    width: 100%;
+    background: var(--COLOR_CREMA_CLARO);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 6em;
+    align-content: center;
+    position: relative;
+}
+
+.seccion-ubicacion .titulo-ubicacion{
+    background: url('../img/la-araucaria.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.seccion-ubicacion p{
+    font-size: 18px;
+}
+
+.contenedor-ubicacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    margin-top: 2em;
+}
+
+.seccion-ubicacion video{
+    height: 400px;
+    filter: grayscale(100%); 
+    -webkit-filter: grayscale(100%);
+}
+
+.contenedor-mapa{
+    position: relative;
+    width: 500px;  
+    height: 400px; 
+}
+
+.contenedor-mapa iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: grayscale(100%); 
+    -webkit-filter: grayscale(100%);
+}
+
+.contenedor-mapa .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; 
+}
+
+.contenedor-mapa:hover .overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.flores-fondo-ubicacion{
+    position: absolute;
+    z-index: -1;
+    background: url('../img/flores_blancas1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 400px;
+    height: 300px;
+    top: 540px;
+    left: -3%;
+    transform: translateX(-50%), rotate(-180deg);
+    opacity: 99;
+}
 
 /* -- GALERÍA DE FOTOS -- */
+
+.seccion-galeria{
+    margin-top: 7em;
+}
 
 .grid-imagenes {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 250px;
-    gap: 30px;
+    gap: 20px;
     grid-template-areas:
         "img1 img1 img2 img3"
         "img4 img5 img2 img6";
     width: 80%;
     margin: 0 auto;
     padding-bottom: 4em;
+    margin-top: 3em;
 }
 
 .img1 { grid-area: img1; }
@@ -250,7 +717,6 @@ h2{
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 8px;
 }
 
 .grid-imagenes div{
@@ -265,152 +731,115 @@ h2{
     border-radius: 8px;
 }
 
+/* ---- SUGERENCIAS DE ALOJAMIENTO ------ */
 
-/* -- DRESSCODE -- */
-
-.seccion-dresscode{
-    margin-bottom: 6em;
+.seccion-alojamiento{
+    width: 100%;
+    height: 300px;
+    align-content: center;
 }
 
-.seccion-dresscode p{
-    font-family: 'Great Vibes', cursive;
-    font-size: 40px;
-    color: var(--COLOR_GRIS_OSCURO);
+.seccion-alojamiento h2{
+    font-size: 16px;
 }
 
-.gif-dresscode{
-    width: 350px;
-    height: 350px;
+.seccion-alojamiento div{
+    background: url('../img/alojamiento.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 300px;
+    margin: 0 auto;
 }
 
+.seccion-alojamiento button{
+    margin-top: 2em;
+}
 
-/* -- REGALO -- */
+#modalAlojamiento .titulo-alojamiento{
+    background: url('../img/alojamiento.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100px;
+    width: 300px;
+    margin: 0 auto;
+}
 
-.regalo{
-    position: relative;
+#modalAlojamiento ul li{
     display: flex;
     flex-direction: column;
+    gap: 10px;
     justify-content: center;
-    align-items: center;
-    height: 400px;
-    width: 500px;
-    margin: 0 auto;
-    border-radius: 12px;
-    cursor: pointer;
 }
 
-.regalo hr{
-    height: 1px;
-    color: var(--COLOR_GRIS_OSCURO);
-    width: 400px;
-    margin-bottom: 1em;
+#modalAlojamiento ul li h4{
+    font-size: 20px;
 }
 
-.regalo p{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 400px;
-    margin-bottom: 6em;
+#modalAlojamiento ul li a{
+    text-decoration: none;
+    color: #626365;
+    background-color: var(--COLOR_GRIS_PERLA);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .8s ease;
 }
 
-.regalo .regalo-superior{
-    width: 300px;
-    height: 95px;
-    background: url('/img/regalo-superior.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 2;
-    position: absolute;
-    margin-bottom: -60px;
-    transition: all .3s ease;
+#modalAlojamiento ul li a:hover{
+    color: var(--COLOR_CREMA_CLARO);
+    background: var(--COLOR_GRIS_OSCURO);
 }
-
-.regalo .regalo-inferior{
-    width: 220px;
-    height: 137px;
-    background: url('/img/regalo-inferior.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-bottom: 2em;
-    z-index: 1;
-}
-
-.regalo .flores-chicas-sup{
-    position: absolute;
-    background: url('../img/flores_blancas1.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    width: 200px;
-    height: 150px;
-    top: -45px;
-    left: 10%;
-    transform: translateX(-50%);
-    opacity: 99;
-}
-
-.regalo .flores-chicas-inf{
-    position: absolute;
-    background: url('../img/flores_blancas1.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    width: 200px;
-    height: 150px;
-    top: 280px;
-    left: 68%;
-    transform: translateX(-50%);
-    transform: rotate(180deg);
-}
-
-.abierta {
-    transform: translateY(-50px) rotate(20deg); 
-    transform-origin: center bottom;
-}
-
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.contenido-modal {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 400px;
-    width: 80%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-.cerrar {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
 
 /* ------- PLAYLIST ------- */
 
 .playlist {
     text-align: center;
-    padding: 2em;
-    background: #f9f9f9;
+    padding: 5em 2em 3em 2em;
+    background: var(--COLOR_CREMA_CLARO);
     border-radius: 12px;
     margin: auto;
-    margin-top: 2em;
+    margin-top: 4em;
+    position: relative;
+    overflow: hidden;
+}
+
+.flor-izquierda{
+    position: absolute;
+    background: url('../img/flores_blancas3.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 370px;
+    height: 250px;
+    top: -90px;
+    left: 2%;
+    transform: translateX(-50%) rotate(20deg);
+}
+
+.flor-derecha{
+    position: absolute;
+    background: url('../img/flores_blancas5.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 350px;
+    height: 250px;
+    top: 75%;
+    left: 92%;
+    transform: translateX(-50%) rotate(-10deg);
+    opacity: .8;
+}
+
+.playlist .titulo-playlist{
+    background: url('../img/nuestra-playlist.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 90px;
+    margin: 0 auto;
 }
 
 .playlist iframe{
@@ -432,14 +861,101 @@ h2{
 }
 
 
+/* --- INSTAGRAM --- */
+
+.seccion-instagram{
+    width: 100%;
+    height: auto;
+    align-content: center;
+    margin-top: 3em;
+    margin-bottom: 4em;
+}
+
+.contenedor-instagram{
+    width: 500px;
+    height: auto;
+
+    padding: 20px;
+    margin: 0 auto;
+    padding-bottom: 3em;
+}
+
+.contenedor-instagram .titulo-instagram{
+    background: url('../img/etiquetanos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 320px;
+    height: 90px;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+}
+
+.contenedor-instagram .icono-instagram{
+    background: url('../img/icono-camara.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.contenedor-instagram span{
+    background: var(--COLOR_GRIS_PERLA);
+    color: var(--COLOR_GRIS_OSCURO);
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.contenedor-instagram p{
+    margin: 1em 0 2em 0;
+}
+
+.contenedor-instagram .foto-instagram{
+    background: url('../img/individual1.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 500px;
+    margin: 0 auto;
+    filter: grayscale(100%);
+}
+
+.contenedor-instagram a{
+    margin-bottom: 2em;
+}
+
 /* ---- CONFIRMAR ------ */
 
 .confirmar-asistencia{
-    height: 300px;
+    height: 400px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10em;
+}
+
+.confirmar-asistencia .contenedor-asistencia{
+    width: 500px;
+    height: auto;
+    background: var(--COLOR_CREMA_CLARO);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4em;
+    position: relative;
+}
+
+.contenedor-asistencia .flores-chicas-inf{
+    top: 180px;
+}
+
+.contenedor-asistencia p{
+    margin-top: 1em;
 }
 
 .confirmar-asistencia .icono-invitacion {
@@ -447,6 +963,7 @@ h2{
     width: 80px;
     height: 80px;
     animation: sacudirSuave 3s infinite ease-in-out;
+    margin: 0 auto;
 }
 
 /* Animación para sacudir suavemente la invitación */
@@ -490,6 +1007,158 @@ h2{
     color: var(--COLOR_GRIS_OSCURO);
 }
 
+/* -- FOOTER -- */
+footer{
+    background: var(--COLOR_CREMA_CLARO);
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+}
+
+footer .gabydani{
+    background: url('../img/gaby-y-dani-gris.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 100px;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: var(--COLOR_GRIS_OSCURO);
+    font-size: 23px;
+    transition: all .5s ease;
+}
+
+footer ul li a:hover{
+    color: var(--COLOR_VERDE);
+}
+
+/* -- BOTÓN WHATSAPP -- */
+
+.whatsapp-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.btn-wsp {
+    background: var(--COLOR_VERDE);
+    color: var(--COLOR_CREMA_CLARO);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.btn-wsp:hover {
+    background: var(--COLOR_GRIS_PERLA);
+    color: var(--COLOR_GRIS_OSCURO);
+}
+
+.opciones-wsp {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.opciones-wsp a {
+    position: absolute;
+    background: var(--COLOR_GRIS_OSCURO);
+    color: var(--COLOR_CREMA_CLARO);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 20px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+}
+
+.btn-gabi {
+    transform: translateY(0);
+}
+.btn-dani {
+    transform: translateX(0);
+}
+
+.opciones-wsp.active .btn-gabi {
+    transform: translateY(-130px) translateX(-100px); 
+    opacity: 1;
+    pointer-events: auto;
+}
+.opciones-wsp.active .btn-dani {
+    transform: translateX(-170px) translateY(-50px); 
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* --- MÚSICA --- */
+
+.btn-musica {
+    position: fixed;
+    top: 15px; 
+    right: 20px;
+    background: var(--COLOR_CREMA_CLARO);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+    z-index: 1000;
+}
+
+.btn-musica:hover {
+    background: var(--COLOR_GRIS_PERLA);
+}
+
+.icono-musica {
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    background: url("../img/icono-musica.png") center/contain no-repeat; 
+    position: relative;
+}
+
+/* Línea diagonal al pausar */
+.icono-musica.pausado::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 40px;
+    height: 100%;
+    border-top: 3px solid var(--COLOR_VERDE);
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+
+
 /* -- RESPONSIVE -- */
 
 @media (max-width: 768px){
@@ -510,6 +1179,33 @@ h2{
         "img1 img2"
         "img3 img4"
         "img5 img6";
+    }
+
+    /*Video presentación*/
+
+    .contenedor-video .texto-video{
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        z-index: 2;
+    }
+
+    .texto-video h5{
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 0.2em;
+    }
+
+    .texto-video .titulo-video{
+        background: url('../img/gabi-y-dani.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 300px;
+        height: 100px;
     }
 }
 

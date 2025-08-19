@@ -1,4 +1,4 @@
-let fecha = new Date(2025, 12, 13, 21); /*año - mes - día - hora - minutos*/
+let fecha = new Date(2025, 11, 13, 21); /*año - mes - día - hora - minutos (11 = diciembre) */
 
 let msFecha = fecha.getTime(); // obtenemos milisegundos
 
@@ -66,3 +66,44 @@ let intervalo = setInterval(() => {
       tapa.classList.remove('abierta');
     }
   });
+
+/* ---- MODAL ALOJAMIENTO ---- */
+const btnAlojamiento = document.getElementById('btn-alojamiento');
+const modalAlojamiento = document.getElementById('modalAlojamiento');
+const cerrarAlojamiento = document.getElementById('cerrarAlojamiento');
+
+btnAlojamiento.addEventListener('click', () => {
+  modalAlojamiento.style.display = 'flex';
+});
+
+cerrarAlojamiento.addEventListener('click', () => {
+  modalAlojamiento.style.display = 'none';
+});
+
+// Cerrar si se hace clic fuera del contenido
+modalAlojamiento.addEventListener('click', (e) => {
+  if (e.target === modalAlojamiento) {
+    modalAlojamiento.style.display = 'none';
+  }
+});
+
+
+// Botón WhatsApp
+function toggleOpciones() {
+    document.getElementById("opcionesWsp").classList.toggle("active");
+}
+
+
+// Audio
+function toggleMusica() {
+    const audio = document.getElementById("musica");
+    const icono = document.querySelector(".icono-musica");
+
+    if (audio.paused) {
+        audio.play();
+        icono.classList.remove("pausado");
+    } else {
+        audio.pause();
+        icono.classList.add("pausado");
+    }
+}
