@@ -457,8 +457,13 @@ p{
     font-size: 18px;
 }
 
-.regalo h2{
-    margin-top: 0;
+.regalo .titulo-regalo{
+    background: url('/img/regalos.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 90px;
+    width: 300px;
 }
 
 .regalo .regalo-superior{
@@ -470,7 +475,7 @@ p{
     background-repeat: no-repeat;
     z-index: 2;
     position: absolute;
-    margin-bottom: -85px;
+    margin-bottom: -140px;
     transition: all .3s ease;
 }
 
@@ -1182,33 +1187,294 @@ footer ul li a:hover{
     }
 
     /*Video presentación*/
-
-    .contenedor-video .texto-video{
-        position: absolute;
-        top: 75%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: white;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-        z-index: 2;
-    }
-
     .texto-video h5{
         font-size: 20px;
-        text-transform: uppercase;
-        margin-bottom: 0.2em;
     }
-
     .texto-video .titulo-video{
-        background: url('../img/gabi-y-dani.png');
-        background-repeat: no-repeat;
-        background-size: contain;
         width: 300px;
         height: 100px;
+    }
+
+    /*Información del evento*/
+    .contenedor-info-evento{
+        width: 400px;
+    }
+
+    /*Ubicación*/
+    .seccion-ubicacion{
+        height: auto;
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .seccion-ubicacion .titulo-ubicacion{
+        width: 250px;
+        height: 100px;
+    }
+
+    .contenedor-ubicacion{
+        flex-direction: column;
+        gap: 3em;
+        margin-top: 2em;
+    }
+
+    .seccion-ubicacion video{
+        width: 250px;
+        height: 250px;
+        margin-bottom: 2em;
+    }
+
+    .contenedor-mapa{
+        width: 250px;  
+        height: 250px; 
+    }
+
+    .flores-fondo-ubicacion{
+        width: 300px;
+        height: 200px;
+        top: 760px;
+        left: -20%;
     }
 }
 
 @media (max-width: 483px){
+
+    /*Información del evento*/
+    .contenedor-info-evento{
+        width: 300px;
+        margin: 6em auto;
+        margin-bottom: 4em;
+    }
+    .contenedor-info-evento h3{
+        margin-bottom: 1em;
+    }
+    .info-evento .botones{
+        flex-direction: column;
+    }
+    .info-evento{
+        margin-bottom: 1em;
+    }
+    .linea-curva, .linea-curva-der{
+        display: none;
+    }
+
+    /*Dresscode*/
+    .seccion-dresscode{
+        margin-bottom: 2em;
+    }
+
+    /*Regalo*/
+    .seccion-regalo{
+        position: relative;
+        overflow-x: hidden; 
+        height: auto;       
+        min-height: 700px;
+    }
+
+    .regalo{
+        height: 500px;
+        max-width: 300px;
+    }
+
+    .regalo p{
+        width: 95%;
+        font-size: 16px;
+    }
+
+    .regalo .titulo-regalo{
+        width: 200px;
+    }
+
+    .regalo .regalo-superior{
+        width: 200px;
+        height: 80px;
+        margin-bottom: -165px;
+    }
+
+    .regalo .regalo-inferior{
+        width: 130px;
+        height: 100px;
+    }
+
+    .regalo .clic-regalo{
+        width: 130px;
+        height: 130px;
+    }
+
+    .flores-chicas-sup{
+        width: 300px;
+        height: 200px;
+        top: -60px;
+        right: 5%;
+    }
+
+    .flores-chicas-inf{
+        width: 400px;
+        height: 300px;
+        top: 280px;
+    }
+
+    /*Modal regalo*/
+    .modal {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .modal .flor{
+        top: -15px;
+    }
+
+    .contenido-modal {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        max-width: 300px;
+        width: 80%;
+        height: 500px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenido-modal .titulo-datos-bancarios{
+        background: url('../img/datos-bancarios.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 250px;
+        height: 100px;
+        margin-top: 2em;
+    }
+
+    .contenido-modal ul{
+        list-style: none;
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+
+    .contenido-modal ul li{
+        text-decoration: none;
+        font-size: 17px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--COLOR_GRIS_OSCURO);
+        margin-bottom: 1em;
+    }
+
+    .contenido-modal ul li strong{
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    /*Galería de fotos*/
+    .grid-imagenes {
+        gap: 10px;
+    }
+
+    /*Alojamiento*/
+    #modalAlojamiento .titulo-alojamiento{
+        height: 80px;
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    /*Playlist*/
+    .playlist {
+        text-align: center;
+        padding: 5em 2em 3em 2em;
+        background: var(--COLOR_CREMA_CLARO);
+        border-radius: 12px;
+        margin: auto;
+        margin-top: 4em;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .flor-izquierda{
+        width: 270px;
+        height: 250px;
+        top: -90px;
+        left: 2%;
+        transform: translateX(-50%) rotate(20deg);
+        z-index: 2;
+    }
+
+    .flor-derecha{
+        transform: translateX(-50%) rotate(-40deg);
+        opacity: .9;
+    }
+
+    .playlist .titulo-playlist{
+        width: 300px;
+    }
+
+    .playlist iframe{
+        width: 300px;
+        margin-top: 2em;
+    }
+
+    /*Instagram*/
+    .seccion-instagram{
+        margin-bottom: 0;
+    }
+
+    .contenedor-instagram{
+        max-width: 350px;
+        padding-bottom: 2em;
+    }
+
+    .contenedor-instagram .titulo-instagram{
+        width: 300px;
+    }
+
+    .contenedor-instagram .foto-instagram{
+        width: 100%;
+        height: 350px;
+    }
+
+    .contenedor-instagram a{
+        margin-bottom: 2em;
+    }
+
+    /*Confirmar asistencia*/
+    .confirmar-asistencia{
+        height: 400px;
+        margin-bottom: 2em;
+        position: relative;
+        overflow-x: hidden; 
+        height: auto;       
+        min-height: 550px;
+    }
+
+    .confirmar-asistencia .contenedor-asistencia{
+        width: 300px;
+        height: 350px;
+        padding: 2em;
+        position: relative;
+    }
+
+    .contenedor-asistencia .flores-chicas-inf{
+        top: 180px;
+        height: 250px;
+    }
+
+    .contenedor-asistencia .flores-chicas-sup{
+        height: 250px;
+    }
+
+    .contenedor-asistencia p{
+        margin-top: 1em;
+    }
 
 }
