@@ -458,7 +458,7 @@ p{
 }
 
 .regalo .titulo-regalo{
-    background: url('/img/regalos.png');
+    background: url('../img/regalos.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -469,7 +469,7 @@ p{
 .regalo .regalo-superior{
     width: 300px;
     height: 95px;
-    background: url('/img/regalo-superior.png');
+    background: url('../img/regalo-superior.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -482,7 +482,7 @@ p{
 .regalo .regalo-inferior{
     width: 210px;
     height: 118px;
-    background: url('/img/regalo-inferior.png');
+    background: url('../img/regalo-inferior.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -527,7 +527,7 @@ p{
     height: 300px;
     top: 280px;
     left: 45%;
-    transform: translateX(-50%), rotate(187deg);
+    transform: translateX(-50%) rotate(187deg);
     opacity: 99;
 }
 
