@@ -1174,6 +1174,77 @@ footer ul li a:hover{
     transform-origin: center;
 }
 
+/* ---- CARTEL INICIAL ------ */
+
+#cartel-inicial {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#cartel-inicial h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+}
+
+
+#cartel-inicial .flor{
+    position: absolute;
+    background: url('../img/flores_blancas4.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 300px;
+    height: 180px;
+    top: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#cartel-inicial .contenido-modal{
+    height: 300px;
+}
+
+#cartel-inicial .botones .btn{
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.btn-ingreso-musica {
+    background: var(--COLOR_VERDE);
+    color: white;
+    margin-right: 1em;
+}
+
+.btn--ingreso-musica:hover {
+    background: var(--COLOR_GRIS_PERLA);
+}
+
+.btn-ingreso-sin {
+    background: var(--COLOR_GRIS_OSCURO);
+    color: white;
+}
+
+.btn-ingreso-sin:hover {
+    background: var(--COLOR_GRIS_PERLA);
+}
+
+#cartel-inicial .gabydani{
+    background: url('../img/gaby-y-dani-gris.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 90px;
+}
 
 /* -- RESPONSIVE -- */
 
@@ -1282,7 +1353,7 @@ footer ul li a:hover{
         position: relative;
         overflow-x: hidden; 
         height: auto;       
-        min-height: 700px;
+        min-height: 720px;
     }
 
     .regalo{
@@ -1340,10 +1411,6 @@ footer ul li a:hover{
         z-index: 10;
     }
 
-    .modal .flor{
-        top: -15px;
-    }
-
     .contenido-modal {
         background-color: #fff;
         padding: 20px;
@@ -1357,6 +1424,10 @@ footer ul li a:hover{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .contenido-modal .flor{
+        top: 105px;
     }
 
     .contenido-modal .titulo-datos-bancarios{
@@ -1398,6 +1469,10 @@ footer ul li a:hover{
         height: 80px;
         width: 200px;
         margin: 0 auto;
+    }
+
+    .seccion-alojamiento{
+        padding: 20px;
     }
 
     /*Playlist*/
@@ -1486,6 +1561,10 @@ footer ul li a:hover{
 
     .contenedor-asistencia p{
         margin-top: 1em;
+    }
+
+    .titulo-asistencia{
+    width: 250px;
     }
 
 }

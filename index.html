@@ -100,7 +100,7 @@
                 <div class="icono-ubicacion"></div>
                 CÓMO LLEGAR</a>
 
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamiento+Gabi+y+Dani&dates=20251213T190000/20251214T050000&details=Información+del+Evento%0A%0AFecha:+13+de+diciembre,+2025%0AHora:+19:00hs%0ALugar:+La+Araucaria+Eventos+-+Ruta+30+km+476,+Chivilcoy,+Provincia+de+Buenos+Aires,+Argentina%0A%0A¡Te+esperamos+en+nuestra+boda!&location=La+Araucaria,+Ruta+30+km+476,+Chivilcoy,+Provincia+de+Buenos+Aires,+Argentina" target="_blank">
+                <a href="./audiovisual/casamiento.ics">
                     <div class="icono-calendario"></div>
                     AGENDAR
                 </a>
@@ -315,8 +315,8 @@
 
 
     <!-- BOTÓN WHATSAPP -->
-    <div class="whatsapp-container">
-        <button class="btn-wsp" onclick="toggleOpciones()">
+    <div class="whatsapp-container" id="whatsappContainer">
+        <button class="btn-wsp" onclick="toggleOpciones(event)">
             <i class="fa-brands fa-whatsapp"></i>
         </button>
 
@@ -334,7 +334,7 @@
     </div>
 
     <!-- AUDIO -->
-    <audio id="musica" loop autoplay>
+    <audio id="musica" loop>
         <source src="./audiovisual/audio.mp3" type="audio/mp3">
         Tu navegador no soporta audio.
     </audio>
@@ -343,6 +343,20 @@
     <button class="btn-musica" onclick="toggleMusica()">
         <div class="icono-musica"></div>
     </button>
+
+     <!-- Cartel inicial -->
+    <div id="cartel-inicial" class="modal">
+        <div class="flor"></div>
+        <div class="contenido-modal">
+            <div class="gabydani"></div>
+            <h2>¿Cómo desea ingresar?</h2>
+            <div class="botones">
+                <button class="btn btn-ingreso-musica" id="conMusica">Con música</button>
+                <button class="btn btn-ingreso-sin" id="sinMusica">Sin música</button>
+            </div>
+        </div>
+        
+    </div>
 
     <!-- FOOTER -->
 

@@ -1,0 +1,10 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Casamiento Gabi y Dani
+DTSTART:20251213T220000Z
+DTEND:20251214T080000Z
+DESCRIPTION:¡Te esperamos en nuestra boda!\n\nFecha: 13 de diciembre, 2025\nHora: 19:00hs\nLugar: La Araucaria Eventos - Ruta 30 km 476, Chivilcoy, Provincia de Buenos Aires, Argentina
+LOCATION:La Araucaria Eventos - Ruta 30 km 476, Chivilcoy, Provincia de Buenos Aires, Argentina
+END:VEVENT
+END:VCALENDAR

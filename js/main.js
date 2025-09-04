@@ -89,10 +89,19 @@ modalAlojamiento.addEventListener('click', (e) => {
 
 
 // Botón WhatsApp
-function toggleOpciones() {
+function toggleOpciones(event) {
+    event.stopPropagation(); // evita que el click se propague al documento
     document.getElementById("opcionesWsp").classList.toggle("active");
 }
 
+document.addEventListener("click", function(e) {
+    const opciones = document.getElementById("opcionesWsp");
+    const container = document.getElementById("whatsappContainer");
+
+    if (opciones.classList.contains("active") && !container.contains(e.target)) {
+        opciones.classList.remove("active");
+    }
+});
 
 // Audio
 function toggleMusica() {
@@ -107,3 +116,18 @@ function toggleMusica() {
         icono.classList.add("pausado");
     }
 }
+
+/* PARA MANEJAR INGRESO CON Y SIN MUSICA */
+
+const musica = document.getElementById("musica");
+    const overlay = document.getElementById("cartel-inicial");
+
+    document.getElementById("conMusica").addEventListener("click", () => {
+      musica.play();
+      overlay.style.display = "none";
+    });
+
+    document.getElementById("sinMusica").addEventListener("click", () => {
+      musica.pause();
+      overlay.style.display = "none";
+    });
