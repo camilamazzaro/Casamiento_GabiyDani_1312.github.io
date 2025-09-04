@@ -548,7 +548,7 @@ p{
     background-color: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 9999;
 }
 
 #cartel-inicial .flor{
@@ -699,6 +699,47 @@ p{
 }
 
 /* -- GALERÍA DE FOTOS -- */
+
+.carrusel-celular {
+    display: none;
+    width: 90%;
+    max-width: 90vw;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+.carrusel-celular .swiper-slide {
+  flex-shrink: 0;     
+  width: 100%;          
+  height: 100%;
+}
+
+
+.carrusel-celular .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Paginación personalizada: líneas blancas */
+.carrusel-celular .swiper-pagination {
+    bottom: 10px;
+}
+
+.carrusel-celular .swiper-pagination-bullet {
+    width: 15px;          /* largo de la línea */
+    height: 2px;          /* grosor */
+    background: white;     /* color blanco */
+    border-radius: 2px;    /* esquinas redondeadas */
+    opacity: 0.5;          /* opacidad de inactivo */
+    margin: 0 5px !important; /* espacio entre "líneas" */
+}
+
+.carrusel-celular .swiper-pagination-bullet-active {
+    opacity: 1;            /* activo más visible */
+}
 
 .seccion-galeria{
     margin-top: 7em;
@@ -1193,7 +1234,7 @@ footer ul li a:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 9999;
 }
 
 #cartel-inicial h2 {
@@ -1264,6 +1305,9 @@ footer ul li a:hover{
 
 @media (max-width: 768px){
     
+    .grid-imagenes { display: none; }
+    .carrusel-celular { display: block; }
+
     /*fecha y cuenta regresiva*/
     .cuenta-regresiva{
         gap: 1rem;
@@ -1598,6 +1642,13 @@ footer ul li a:hover{
 
 }
 
+
+
+@media (max-width: 490px){
+    #cartel-inicial .flor{
+        top: 13%;
+    }
+}
 
 @media (max-width: 395px){
     #cartel-inicial .flor{

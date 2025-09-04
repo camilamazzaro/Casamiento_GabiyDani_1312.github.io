@@ -8,6 +8,8 @@
 
     <!--Íconos-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
 <body>
     
@@ -234,6 +236,21 @@
             </div>
         </div>
 
+        <!-- Carrusel Swiper para móviles -->
+        <div class="swiper carrusel-celular">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./img/galeria_byn3.png" alt="Imagen 1"></div>
+                <div class="swiper-slide"><img src="./img/galeria_byn6.png" alt="Imagen 2"></div>
+                <div class="swiper-slide"><img src="./img/galeria_byn7.png" alt="Imagen 3"></div>
+                <div class="swiper-slide"><img src="./img/galeria_byn4.png" alt="Imagen 4"></div>
+                <div class="swiper-slide"><img src="./img/galeria_byn5.png" alt="Imagen 5"></div>
+                <div class="swiper-slide"><img src="./img/galeria_byn1.png" alt="Imagen 6"></div>
+            </div>
+            <!-- Paginación -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+
     </section>
 
     <!-- Sugerencias de alojamiento -->
@@ -377,6 +394,23 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
+
+    <script>
+        // CARROUSEL CELULAR
+        const swiper = new Swiper('.carrusel-celular', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+
+    </script>
+    
 </body>
 </html>
