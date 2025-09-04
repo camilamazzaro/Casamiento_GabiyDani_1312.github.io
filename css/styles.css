@@ -551,11 +551,19 @@ p{
     z-index: 10;
 }
 
-.modal .flor{
-    top: -15px;
+#cartel-inicial .flor{
+    top: -50%; /* La mitad de la flor queda arriba del modal */
+    z-index: 2;
+    aspect-ratio: 300/180;
+}
+
+#cartel-inicial .flor{
+    top: -20%; /* La mitad de la flor queda arriba del modal */
+    z-index: 2;
 }
 
 .contenido-modal {
+    position: relative;
     background-color: #fff;
     padding: 30px;
     padding-top: 2em;
@@ -1214,6 +1222,12 @@ footer ul li a:hover{
     height: 300px;
 }
 
+#cartel-inicial .botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #cartel-inicial .botones .btn{
     text-transform: uppercase;
     font-size: 18px;
@@ -1426,8 +1440,23 @@ footer ul li a:hover{
         align-items: center;
     }
 
-    .contenido-modal .flor{
-        top: 105px;
+    #cartel-inicial .gabydani{
+        margin-top: 20px;
+        max-width: 250px;
+        height: 80px;
+    }
+
+    #cartel-inicial .botones{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #cartel-inicial .botones .btn-ingreso-musica{
+        margin-right: 0;
+    }
+
+    #cartel-inicial .flor{
+        top: 23%;
     }
 
     .contenido-modal .titulo-datos-bancarios{

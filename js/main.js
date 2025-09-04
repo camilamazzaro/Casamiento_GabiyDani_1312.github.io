@@ -118,16 +118,20 @@ function toggleMusica() {
 }
 
 /* PARA MANEJAR INGRESO CON Y SIN MUSICA */
-
 const musica = document.getElementById("musica");
-    const overlay = document.getElementById("cartel-inicial");
+const overlay = document.getElementById("cartel-inicial");
 
-    document.getElementById("conMusica").addEventListener("click", () => {
-      musica.play();
+document.getElementById("conMusica").addEventListener("click", () => {
+  musica.play().then(() => {
+      // se pudo reproducir
       overlay.style.display = "none";
-    });
+  }).catch(err => {
+      console.log("El navegador bloqueó el audio:", err);
+      overlay.style.display = "none";
+  });
+});
 
-    document.getElementById("sinMusica").addEventListener("click", () => {
-      musica.pause();
-      overlay.style.display = "none";
-    });
+document.getElementById("sinMusica").addEventListener("click", () => {
+  musica.pause();
+  overlay.style.display = "none";
+});
