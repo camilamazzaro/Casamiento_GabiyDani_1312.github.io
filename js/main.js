@@ -121,17 +121,38 @@ function toggleMusica() {
 const musica = document.getElementById("musica");
 const overlay = document.getElementById("cartel-inicial");
 
-document.getElementById("conMusica").addEventListener("click", () => {
-  musica.play().then(() => {
-      // se pudo reproducir
-      overlay.style.display = "none";
-  }).catch(err => {
-      console.log("El navegador bloqueó el audio:", err);
-      overlay.style.display = "none";
-  });
+document.getElementById("conMusica").addEventListener("click", (e) => {
+    // Reproducir el audio directamente al click
+    const playPromise = musica.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+        .then(() => {
+            // Audio reproduciéndose correctamente
+            overlay.style.display = "none";
+        })
+        .catch((error) => {
+            // Error de autoplay bloqueado
+            console.log("El navegador bloqueó el audio:", error);
+            overlay.style.display = "none";
+        });
+    } else {
+        overlay.style.display = "none";
+    }
 });
 
 document.getElementById("sinMusica").addEventListener("click", () => {
-  musica.pause();
-  overlay.style.display = "none";
+    musica.pause();
+    overlay.style.display = "none";
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Cargar y desbloquear audio al primer toque
+    const musica = document.getElementById("musica");
+    const unlockAudio = () => {
+        musica.play().then(() => musica.pause());
+        document.removeEventListener("touchstart", unlockAudio);
+    };
+    document.addEventListener("touchstart", unlockAudio, { once: true });
+});
+
