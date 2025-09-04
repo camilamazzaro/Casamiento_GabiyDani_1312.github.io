@@ -1305,6 +1305,10 @@ footer ul li a:hover{
 
 @media (max-width: 768px){
     
+    #cartel-inicial .flor{
+        top: 13%;
+    }
+
     .grid-imagenes { display: none; }
     .carrusel-celular { display: block; }
 
