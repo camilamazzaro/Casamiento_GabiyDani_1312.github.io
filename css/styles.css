@@ -1309,6 +1309,11 @@ footer ul li a:hover{
         top: 13%;
     }
 
+
+    #cartel-inicial .gabydani{
+        margin-top: 50px;
+    }
+
     .grid-imagenes { display: none; }
     .carrusel-celular { display: block; }
 
