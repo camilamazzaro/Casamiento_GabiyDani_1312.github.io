@@ -701,7 +701,7 @@ p{
 /* -- GALERÍA DE FOTOS -- */
 
 .carrusel-celular {
-    display: none !important;
+    display: none;
     width: 90%;
     max-width: 90vw;
     height: 300px;
