@@ -129,7 +129,8 @@ p{
     display: block;
     object-fit: cover;
     margin-bottom: 1em;
-    filter: grayscale(100%); /*Hago el video en BYN*/
+    background-position: center;
+    /* filter: grayscale(100%); Hago el video en BYN*/
 }
 
 .contenedor-video::after {
@@ -139,13 +140,13 @@ p{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0) 80%);
+    /* background: linear-gradient(to top, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0) 80%); */
     pointer-events: none; /* para que no bloquee clics en el video */
 }
 
 .contenedor-video .texto-video{
     position: absolute;
-    top: 75%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -167,7 +168,7 @@ p{
 } */
 
 .texto-video .titulo-video{
-    background: url('../img/gabi-y-dani.png');
+    background: url('../img/nuestro_casamiento.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 400px;
@@ -180,7 +181,7 @@ p{
     left: 50%;
     transform: translateX(-50%);
     font-size: 3em;
-    color: var(--COLOR_VERDE);
+    color: var(--COLOR_CREMA_CLARO);
     text-decoration: none;
     animation: saltar 1.5s infinite;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -358,6 +359,36 @@ p{
     background-repeat: no-repeat;
     width: 270px;
     height: 130px;
+}
+
+/* --- FRASE 1 --- */
+
+.frase1{
+    height: 400px;
+    margin-bottom: 4em;
+}
+
+.frase1 .linea-deco-sup{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 250px;
+    height: 50px;
+    background: url('../img/linea_deco.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.frase1 .linea-deco-inf{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 250px;
+    height: 50px;
+    background: url('../img/linea_deco.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: rotate(180deg);
 }
 
 
@@ -625,7 +656,7 @@ p{
 .seccion-ubicacion .titulo-ubicacion{
     background: url('../img/la-araucaria.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     width: 300px;
     height: 100px;
     margin: 0 auto;
@@ -644,9 +675,11 @@ p{
 }
 
 .seccion-ubicacion video{
-    height: 400px;
-    filter: grayscale(100%); 
-    -webkit-filter: grayscale(100%);
+    height: 350px;
+    /* filter: grayscale(100%); 
+    -webkit-filter: grayscale(100%); */
+    transform: rotate(90deg);
+    object-fit: cover;
 }
 
 .contenedor-mapa{
@@ -702,11 +735,12 @@ p{
 
 .carrusel-celular {
     display: none;
-    width: 90%;
+    width: 80%;
     max-width: 90vw;
     height: 300px;
     margin: 0 auto;
     margin-top: 2em;
+    margin-bottom: 3em;
 }
 
 .carrusel-celular .swiper-slide {
@@ -785,12 +819,41 @@ p{
     border-radius: 8px;
 }
 
+.seccion-galeria h2{
+    font-size: 26px;
+}
+
 /* ---- SUGERENCIAS DE ALOJAMIENTO ------ */
 
 .seccion-alojamiento{
     width: 100%;
     height: 300px;
     align-content: center;
+}
+
+.contenido-modal {
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
+    padding-top: 2em;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+    height: 550px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalAlojamiento .contenido-modal{
+    height: 550px;
+}
+
+#modalAlojamiento .contenido-modal p{
+    margin-top: 2em !important;
 }
 
 .seccion-alojamiento h2{
@@ -820,11 +883,20 @@ p{
     margin: 0 auto;
 }
 
+#modalAlojamiento ul{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #modalAlojamiento ul li{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
+    width: 85%;
 }
 
 #modalAlojamiento ul li h4{
@@ -968,17 +1040,26 @@ p{
 }
 
 .contenedor-instagram .foto-instagram{
-    background: url('../img/individual1.jpeg');
-    background-size: contain;
+    background: url('../img/etiquetanos_presentacion.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     width: 450px;
-    height: 500px;
+    height: 450px;
     margin: 0 auto;
-    filter: grayscale(100%);
+    margin-bottom: 3em;
 }
 
 .contenedor-instagram a{
     margin-bottom: 2em;
+}
+
+/* FRASE 2 */
+
+.frase2{
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 85%;
 }
 
 /* ---- CONFIRMAR ------ */
@@ -1112,91 +1193,106 @@ footer ul li a:hover{
 /* -- BOTÓN WHATSAPP -- */
 
 .whatsapp-container {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 1000;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  transition: all 0.4s ease;
 }
 
+.whatsapp-container.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+
 .btn-wsp {
-    background: var(--COLOR_VERDE);
-    color: var(--COLOR_CREMA_CLARO);
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 26px;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    transition: background 0.3s;
+  background: var(--COLOR_VERDE);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  opacity: .7;
 }
 
 .btn-wsp:hover {
-    background: var(--COLOR_GRIS_PERLA);
-    color: var(--COLOR_GRIS_OSCURO);
+  transform: scale(1.1);
 }
 
 .opciones-wsp {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .opciones-wsp a {
-    position: absolute;
-    background: var(--COLOR_GRIS_OSCURO);
-    color: var(--COLOR_CREMA_CLARO);
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 20px;
-    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    align-items: center;
-}
-
-.btn-gabi {
-    transform: translateY(0);
-}
-.btn-dani {
-    transform: translateX(0);
+  position: absolute;
+  background: var(--COLOR_VERDE);
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .opciones-wsp.active .btn-gabi {
-    transform: translateY(-130px) translateX(-100px); 
-    opacity: 1;
-    pointer-events: auto;
+  transform: translateY(-90px) translateX(-150px);
+  opacity: 1;
+  pointer-events: auto;
 }
+
 .opciones-wsp.active .btn-dani {
-    transform: translateX(-170px) translateY(-50px); 
-    opacity: 1;
-    pointer-events: auto;
+  transform: translateX(-150px) translateY(-40px);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 
 /* --- MÚSICA --- */
 
 .btn-musica {
-    position: fixed;
-    top: 15px; 
-    right: 20px;
-    background: var(--COLOR_CREMA_CLARO);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    transition: background 0.3s;
-    z-index: 1000;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  background: var(--COLOR_CREMA_CLARO);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
 }
+
+.btn-musica.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
 
 .btn-musica:hover {
     background: var(--COLOR_GRIS_PERLA);
@@ -1340,8 +1436,8 @@ footer ul li a:hover{
         font-size: 20px;
     }
     .texto-video .titulo-video{
-        width: 300px;
-        height: 100px;
+        width: 350px;
+        height: 90px;
     }
 
     /*Información del evento*/
@@ -1359,9 +1455,13 @@ footer ul li a:hover{
         align-items: center;
     }
 
+    .contenedor-ubicacion{
+        width: 95%;
+    }
+
     .seccion-ubicacion .titulo-ubicacion{
         width: 250px;
-        height: 100px;
+        height: 80px;
     }
 
     .contenedor-ubicacion{
@@ -1371,14 +1471,14 @@ footer ul li a:hover{
     }
 
     .seccion-ubicacion video{
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
         margin-bottom: 2em;
     }
 
     .contenedor-mapa{
-        width: 250px;  
-        height: 250px; 
+        width: 300px;  
+        height: 300px; 
     }
 
     .flores-fondo-ubicacion{
@@ -1390,6 +1490,15 @@ footer ul li a:hover{
 }
 
 @media (max-width: 483px){
+
+    /*Botón música*/
+    .btn-musica {
+        opacity: .8;
+        top: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
 
     /*Información del evento*/
     .contenedor-info-evento{
@@ -1410,8 +1519,28 @@ footer ul li a:hover{
         display: none;
     }
 
+    .btn_agendar{
+        margin-top: 5px !important;
+        background-color: var(--COLOR_GRIS_CLARO) !important;
+        color: var(--COLOR_GRIS_OSCURO) !important;
+    }
+
+    .icono-calendario{
+        filter: invert(20%) brightness(50%);
+  /* o directamente si el svg tiene fill editable */
+        fill: #333;
+    }
+
     /*Dresscode*/
     .seccion-dresscode{
+        margin-bottom: 0;
+    }
+
+    /*Frase 1*/
+    .frase1{
+        width: 85%;
+        margin: 0 auto;
+        font-family: "Cormorant Garamond", serif;
         margin-bottom: 2em;
     }
 
@@ -1440,7 +1569,7 @@ footer ul li a:hover{
     .regalo .regalo-superior{
         width: 200px;
         height: 80px;
-        margin-bottom: -165px;
+        margin-bottom: -160px;
     }
 
     .regalo .regalo-inferior{
@@ -1485,13 +1614,29 @@ footer ul li a:hover{
         text-align: center;
         max-width: 300px;
         width: 80%;
-        height: 500px;
+        height: 450px;
         box-shadow: 0 0 20px rgba(0,0,0,0.2);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
+    .seccion-alojamiento .contenido-modal{
+        height: 700px !important;
+    }
+
+    #cartel-inicial .flor{
+        top: 16% !important; /* La mitad de la flor queda arriba del modal */
+        z-index: 2;
+        aspect-ratio: 300/180;
+    }
+
+    #cartel-inicial .flor{
+        top: -20%; /* La mitad de la flor queda arriba del modal */
+        z-index: 2;
+    }
+
 
     #cartel-inicial .gabydani{
         margin-top: 20px;
@@ -1506,10 +1651,6 @@ footer ul li a:hover{
 
     #cartel-inicial .botones .btn-ingreso-musica{
         margin-right: 0;
-    }
-
-    #cartel-inicial .flor{
-        top: 23%;
     }
 
     .contenido-modal .titulo-datos-bancarios{
@@ -1544,6 +1685,14 @@ footer ul li a:hover{
     /*Galería de fotos*/
     .grid-imagenes {
         gap: 10px;
+    }
+
+    .seccion-galeria h2{
+        margin-top: 0;
+    }
+
+    .seccion-galeria{
+        margin-top: 4em;
     }
 
     /*Alojamiento*/
@@ -1617,7 +1766,7 @@ footer ul li a:hover{
 
     /*Confirmar asistencia*/
     .confirmar-asistencia{
-        height: 400px;
+        height: 420px;
         margin-bottom: 2em;
         position: relative;
         overflow-x: hidden; 
@@ -1627,7 +1776,7 @@ footer ul li a:hover{
 
     .confirmar-asistencia .contenedor-asistencia{
         width: 300px;
-        height: 350px;
+        height: 400px;
         padding: 2em;
         position: relative;
     }

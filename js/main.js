@@ -74,6 +74,7 @@ const cerrarAlojamiento = document.getElementById('cerrarAlojamiento');
 
 btnAlojamiento.addEventListener('click', () => {
   modalAlojamiento.style.display = 'flex';
+  document.activeElement.blur();
 });
 
 cerrarAlojamiento.addEventListener('click', () => {
@@ -103,6 +104,15 @@ document.addEventListener("click", function(e) {
     }
 });
 
+window.addEventListener("scroll", function() {
+    const wsp = document.getElementById("whatsappContainer");
+    if (window.scrollY > 50) {   // cuando bajás 50px
+        wsp.classList.add("visible");
+    } else {
+        wsp.classList.remove("visible");
+    }
+});
+
 // Audio
 function toggleMusica() {
     const audio = document.getElementById("musica");
@@ -116,6 +126,16 @@ function toggleMusica() {
         icono.classList.add("pausado");
     }
 }
+
+window.addEventListener("scroll", function() {
+  const musicaBtn = document.querySelector(".btn-musica");
+  if (window.scrollY > 50) {
+    musicaBtn.classList.add("visible");
+  } else {
+    musicaBtn.classList.remove("visible");
+  }
+});
+
 
 /* PARA MANEJAR INGRESO CON Y SIN MUSICA */
 const musica = document.getElementById("musica");
