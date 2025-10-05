@@ -155,6 +155,12 @@ p{
     z-index: 2;
 }
 
+.video-ubicacion{
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+}
+
 .texto-video h5{
     font-size: 20px;
     text-transform: uppercase;
@@ -366,6 +372,8 @@ p{
 .frase1{
     height: 400px;
     margin-bottom: 4em;
+    width: 40%;
+    margin: 0 auto;
 }
 
 .frase1 .linea-deco-sup{
@@ -582,17 +590,6 @@ p{
     z-index: 9999;
 }
 
-#cartel-inicial .flor{
-    top: -50%; /* La mitad de la flor queda arriba del modal */
-    z-index: 2;
-    aspect-ratio: 300/180;
-}
-
-#cartel-inicial .flor{
-    top: -20%; /* La mitad de la flor queda arriba del modal */
-    z-index: 2;
-}
-
 .contenido-modal {
     position: relative;
     background-color: #fff;
@@ -666,14 +663,6 @@ p{
     font-size: 18px;
 }
 
-.contenedor-ubicacion{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4em;
-    margin-top: 2em;
-}
-
 .seccion-ubicacion video{
     height: 350px;
     /* filter: grayscale(100%); 
@@ -681,6 +670,25 @@ p{
     transform: rotate(90deg);
     object-fit: cover;
 }
+
+.seccion-ubicacion{
+        height: auto;
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor-ubicacion{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3em;
+        margin-top: 2em;
+        width: 95%;
+        align-items: center;
+    }
 
 .contenedor-mapa{
     position: relative;
@@ -743,6 +751,17 @@ p{
     margin-bottom: 3em;
 }
 
+.grid-imagenes .img1 img{
+    object-position: 50% 20%;
+}
+
+.grid-imagenes .img4 img{
+    object-position: top;
+}
+.carrusel-celular .img4{
+    object-position: top;
+}
+
 .carrusel-celular .swiper-slide {
   flex-shrink: 0;     
   width: 100%;          
@@ -773,6 +792,10 @@ p{
 
 .carrusel-celular .swiper-pagination-bullet-active {
     opacity: 1;            /* activo más visible */
+}
+
+.seccion-galeria .carrusel-celular{
+    display: none;
 }
 
 .seccion-galeria{
@@ -827,8 +850,10 @@ p{
 
 .seccion-alojamiento{
     width: 100%;
-    height: 300px;
+    height: 350;
     align-content: center;
+    background-color: var(--COLOR_CREMA_CLARO);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .contenido-modal {
@@ -1060,6 +1085,7 @@ p{
     margin: 0 auto;
     margin-top: 2em;
     width: 85%;
+    height: 200px;
 }
 
 /* ---- CONFIRMAR ------ */
@@ -1321,49 +1347,62 @@ footer ul li a:hover{
 
 /* ---- CARTEL INICIAL ------ */
 
-#cartel-inicial {
+.modal-inicial {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    color: white;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 9999;
 }
 
-#cartel-inicial h2 {
-    margin-bottom: 20px;
+.contenido-modal-inicial {
+    position: relative;
+    background-color: #fff;
+    padding: 2em 2em 2em;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+    min-height: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; 
+}
+
+/* Flor decorativa */
+.modal-inicial .flor {
+    position: absolute;
+    top: -28%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(230px, 25vw, 300px);
+    aspect-ratio: 300 / 180;
+    background: url('../img/flores_blancas4.png') no-repeat center / contain;
+    z-index: 10000; /* ✅ sobre todo */
+    pointer-events: none;
+}
+
+.contenido-modal-inicial h2 {
+    margin-top: 2em;
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
-    text-transform: none;
+    color: #333;
 }
 
-
-#cartel-inicial .flor{
-    position: absolute;
-    background: url('../img/flores_blancas4.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    width: 300px;
-    height: 180px;
-    top: 105px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#cartel-inicial .contenido-modal{
-    height: 300px;
-}
-
-#cartel-inicial .botones{
+/* Botones */
+.contenido-modal-inicial .botones {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 1em;
+    margin-top: 1.5em;
 }
+
+
 
 #cartel-inicial .botones .btn{
     text-transform: uppercase;
@@ -1401,17 +1440,13 @@ footer ul li a:hover{
 
 @media (max-width: 768px){
     
-    #cartel-inicial .flor{
-        top: 13%;
-    }
-
 
     #cartel-inicial .gabydani{
         margin-top: 50px;
     }
 
     .grid-imagenes { display: none; }
-    .carrusel-celular { display: block; }
+    .seccion-galeria .carrusel-celular { display: flex; }
 
     /*fecha y cuenta regresiva*/
     .cuenta-regresiva{
@@ -1622,21 +1657,13 @@ footer ul li a:hover{
         align-items: center;
     }
 
+    .seccion-alojamiento{
+        height: 350px;
+    }
+
     .seccion-alojamiento .contenido-modal{
         height: 700px !important;
     }
-
-    #cartel-inicial .flor{
-        top: 16% !important; /* La mitad de la flor queda arriba del modal */
-        z-index: 2;
-        aspect-ratio: 300/180;
-    }
-
-    #cartel-inicial .flor{
-        top: -20%; /* La mitad de la flor queda arriba del modal */
-        z-index: 2;
-    }
-
 
     #cartel-inicial .gabydani{
         margin-top: 20px;
@@ -1798,18 +1825,12 @@ footer ul li a:hover{
     width: 250px;
     }
 
-}
-
-
-
-@media (max-width: 490px){
-    #cartel-inicial .flor{
-        top: 13%;
+    .frase2{
+        margin: 0 auto;
+        margin-top: 2em;
+        width: 85%;
+        height: 150px;
     }
+
 }
 
-@media (max-width: 395px){
-    #cartel-inicial .flor{
-        top: 13%;
-    }
-}
