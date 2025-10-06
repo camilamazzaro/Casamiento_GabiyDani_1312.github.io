@@ -115,17 +115,20 @@ window.addEventListener("scroll", function() {
 
 // Audio
 function toggleMusica() {
-    const audio = document.getElementById("musica");
-    const icono = document.querySelector(".icono-musica");
+  const icono = document.querySelector(".icono-musica");
 
-    if (audio.paused) {
-        audio.play();
-        icono.classList.remove("pausado");
-    } else {
-        audio.pause();
-        icono.classList.add("pausado");
-    }
+  // Desmutear si estaba silenciado
+  musica.muted = false;
+
+  if (musica.paused) {
+    musica.play();
+    icono.classList.remove("pausado");
+  } else {
+    musica.pause();
+    icono.classList.add("pausado");
+  }
 }
+
 
 window.addEventListener("scroll", function() {
   const musicaBtn = document.querySelector(".btn-musica");
@@ -141,29 +144,24 @@ window.addEventListener("scroll", function() {
 const musica = document.getElementById("musica");
 const overlay = document.getElementById("cartel-inicial");
 
-document.getElementById("conMusica").addEventListener("click", (e) => {
-    // Reproducir el audio directamente al click
-    const playPromise = musica.play();
-
-    if (playPromise !== undefined) {
-        playPromise
-        .then(() => {
-            // Audio reproduciéndose correctamente
-            overlay.style.display = "none";
-        })
-        .catch((error) => {
-            // Error de autoplay bloqueado
-            console.log("El navegador bloqueó el audio:", error);
-            overlay.style.display = "none";
-        });
-    } else {
-        overlay.style.display = "none";
-    }
+// Ingreso con música
+document.getElementById("conMusica").addEventListener("click", () => {
+  musica.muted = true;
+  musica.load();
+  musica.play().then(() => {
+    musica.muted = false;
+    overlay.style.display = "none";
+  }).catch((error) => {
+    console.log("El navegador bloqueó el audio:", error);
+    overlay.style.display = "none";
+  });
 });
 
+// Ingreso sin música
 document.getElementById("sinMusica").addEventListener("click", () => {
-    musica.pause();
-    overlay.style.display = "none";
+  musica.pause();
+  musica.muted = false; 
+  overlay.style.display = "none";
 });
 
 document.addEventListener("DOMContentLoaded", () => {

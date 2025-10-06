@@ -369,18 +369,6 @@
         </div>
     </div>
 
-
-    <!-- AUDIO -->
-    <audio id="musica" loop playsinline>
-        <source src="./audiovisual/let_me_love_you.mp3" type="audio/mp3">
-        Tu navegador no soporta audio.
-    </audio>
-
-    <!-- BOTÓN MÚSICA -->
-    <button class="btn-musica" onclick="toggleMusica()">
-        <div class="icono-musica"></div>
-    </button>
-
      <!-- Cartel inicial -->
     <div id="cartel-inicial" class="modal-inicial">
         <div class="contenido-modal-inicial">
@@ -393,6 +381,17 @@
             </div>
         </div>
         </div>
+
+    <!-- AUDIO -->
+    <audio id="musica" loop playsinline muted>
+        <source src="./audiovisual/let_me_love_you.mp3" type="audio/mp3">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <!-- BOTÓN MÚSICA -->
+    <button class="btn-musica" onclick="toggleMusica()">
+        <div class="icono-musica"></div>
+    </button>
 
     <!-- FOOTER -->
 
